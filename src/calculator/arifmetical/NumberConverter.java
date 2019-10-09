@@ -33,7 +33,7 @@ class NumberConverter {
             int currentNumber = Character.getNumericValue(number.charAt(i))*depth;
             if (currentNumber == 0) continue;
 
-            RomanDigits digit = RomanDigits.nameOf(currentNumber+depth);
+            RomanDigits digit = RomanDigits.valueOf(currentNumber+depth);
             if (digit == null) {
                 for (RomanDigits d : digits) {
                     int digitValue = d.index();
@@ -47,7 +47,7 @@ class NumberConverter {
                     if (currentNumber == 0) break;
                 }
             } else {
-                result.append(RomanDigits.nameOf(depth)).append(digit.toString());
+                result.append(RomanDigits.valueOf(depth)).append(digit.toString());
             }
         }
         return result.toString();

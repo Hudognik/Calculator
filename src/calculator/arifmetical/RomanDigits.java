@@ -23,7 +23,7 @@ public enum RomanDigits {
         return valueOf(String.valueOf(digit)).index();
     }
 
-    static public RomanDigits nameOf(int index) {
+    static public RomanDigits valueOf(int index) {
         for (RomanDigits digit : RomanDigits.values()) {
             if (digit.index() == index) {
                 return digit;
