@@ -1,4 +1,4 @@
-package calculator.arifmetical;
+package calculations.arifmetical;
 
 public enum RomanDigits {
     I (1),
@@ -23,12 +23,12 @@ public enum RomanDigits {
         return valueOf(String.valueOf(digit)).index();
     }
 
-    static public RomanDigits valueOf(int index) {
+    static public String valueOf(int index) {
         for (RomanDigits digit : RomanDigits.values()) {
             if (digit.index() == index) {
-                return digit;
+                return digit.toString();
             }
         }
-        return null;
+        return "";
     }
 }

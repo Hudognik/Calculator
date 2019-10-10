@@ -1,15 +1,15 @@
-package calculator.arifmetical;
+package calculations.arifmetical;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Arithmetic {
+public class Calculator {
     private NumberConverter converter;
     private Pattern ArabicExpressionPattern, RomanExpressionPattern;
     private NumberSystem system;
     private String operandA,operandB,operation;
 
-    public Arithmetic() {
+    public Calculator() {
         String arabicNumberPattern = "([1-9]|10)";
         String romanNumberPattern = "(V?[I]{1,3}|I?[VX])";
         String calcOperatorPattern = "([+-/*])";
@@ -38,9 +38,7 @@ public class Arithmetic {
                 break;
             case "-":
                 c = a-b;
-                if (c <= 0) {
-                    throw new CalculationException("Result can't be zero or less!");
-                }
+                if (c <= 0) throw new CalculationException("Result can't be zero or less!");
                 break;
             case "*":
                 c = a*b;

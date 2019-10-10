@@ -1,4 +1,4 @@
-package calculator.arifmetical;
+package calculations.arifmetical;
 
 public enum NumberSystem {
     ARABIC,

@@ -1,4 +1,4 @@
-package calculator.arifmetical;
+package calculations.arifmetical;
 
 class CalculationException extends Exception {
     CalculationException(String msg) {
