@@ -22,7 +22,7 @@ public class Calculator {
         expression = expression.toUpperCase().trim(); // JUST FOR TESTS!
         Parse(expression);
 
-        int a,b,c = 0;
+        int a,b,result = 0;
 
         if (system == NumberSystem.ROMAN) {
             a = converter.RomanToArabic(operandA);
@@ -34,23 +34,22 @@ public class Calculator {
 
         switch (this.operation) {
             case "+":
-                c = a+b;
+                result = a+b;
                 break;
             case "-":
-                c = a-b;
-                if (c <= 0) throw new CalculationException("Result can't be zero or less!");
+                result = a-b;
+                if (result <= 0) throw new CalculationException("Result can't be zero or less!");
                 break;
             case "*":
-                c = a*b;
+                result = a*b;
                 break;
             case "/":
-                c = a/b;
+                result = a/b;
                 break;
         }
 
-        String result = String.valueOf(c);
         if (this.system == NumberSystem.ARABIC) {
-            return result;
+            return String.valueOf(result);
         } else {
             return converter.ArabicToRoman(result);
         }

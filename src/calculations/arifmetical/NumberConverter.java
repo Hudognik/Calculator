@@ -16,12 +16,13 @@ class NumberConverter {
         return result;
     }
 
-    String ArabicToRoman(String number) {
+    String ArabicToRoman(int number) {
         StringBuilder result = new StringBuilder();
-        int count = number.length();
+        String digits = String.valueOf(number);
+        int count = digits.length();
         for (int i=1; i<=count; i++) {
             int d = (int) Math.pow(10,count-i);
-            int n = Character.getNumericValue(number.charAt(i-1));
+            int n = Character.getNumericValue(digits.charAt(i-1));
             if (n > 0) {
                 int f = 5*d;
                 int p = f;
