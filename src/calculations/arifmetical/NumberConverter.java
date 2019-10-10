@@ -25,22 +25,22 @@ class NumberConverter {
             int n = Character.getNumericValue(digits.charAt(i-1));
             if (n > 0) {
                 int f = 5*d;
-                int p = f;
                 if (n == 5) {
-                    result.append(RomanDigits.valueOf(f)); // 5
+                    result.append(RomanDigits.valueOf(f));
                 } else {
+                    int p = f;
                     if (n > 5) {
                         n = n-5;
                         p = d*10;
                     }
                     if (n == 4) {
-                        result.append(RomanDigits.valueOf(d)).append(RomanDigits.valueOf(p)); // 4,9
+                        result.append(RomanDigits.valueOf(d)).append(RomanDigits.valueOf(p));
                     } else {
                         if (p != f) {
-                            result.append(RomanDigits.valueOf(f)); // 6,7,8
+                            result.append(RomanDigits.valueOf(f));
                         }
                         for (int j=0; j<n; j++) {
-                            result.append(RomanDigits.valueOf(d)); // 1,2,3
+                            result.append(RomanDigits.valueOf(d));
                         }
                     }
                 }
