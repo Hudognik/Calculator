@@ -23,7 +23,6 @@ public class Calculator {
         Parse(expression);
 
         int a,b,result = 0;
-
         if (system == NumberSystem.ROMAN) {
             a = converter.RomanToArabic(operandA);
             b = converter.RomanToArabic(operandB);
